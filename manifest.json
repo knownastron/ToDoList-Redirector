@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Google Keep Redirector",
+  "version": "0.01",
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Options"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}

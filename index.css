@@ -1,0 +1,68 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+div {
+  border-style: solid;
+  border-width: 2px;
+}
+
+body {
+  border-style: solid;
+  border-width: 5px;
+  border-color: red;
+}
+
+table {
+  border-style: dashed;
+  border-color: blue;
+}
+
+td {
+  border-style: dotted;
+  border-color: green;
+  width: 20%;
+}
+
+#addButton {
+  background-color: #810000;
+  color: #C5985D;
+  display: block;
+  height: 35px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  font-weight: bold;
+}
+
+#userForm {
+  width: 23%;
+  margin: 0 auto;
+  margin-top: 15%;
+}
+
+.inputForm {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 20px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#blackListDisplay {
+  margin: 0 auto;
+}
+
+#blackListTable {
+  width: 50%;
+  margin: 0 auto;
+}
