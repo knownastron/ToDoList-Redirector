@@ -1,20 +1,23 @@
-let addButton;
 let blackListDisplay;
 let blackList = [];
 
 window.onload = function() {
-  addButton = document.getElementById("addButton");
-  blackListDisplay = document.getElementById("blackListDisplay");
 
-  addButton.onclick = function() {
-    website = document.getElementById("website").value.toLowerCase();
-    blackList.push(website);
-    console.log(blackList)
-    updateBlackListDisplay();
-  }
+  chrome.storage.sync.get('websites', function(data) {
+    if (data !== undefined) {
+      blackList = data['websites'];
+    }
+
+    initializePage();
+  })
 }
 
+
+
+
+
 function updateBlackListDisplay() {
+  console.log("Updating display");
   blackListDisplay.innerHTML = '';
   let theTable = document.createElement("table");
   theTable.setAttribute("id", "blackListTable")
@@ -42,4 +45,39 @@ function setUpRemoveButton(button) {
     blackList.splice(index, 1);
     this.parentNode.remove();
   }
+}
+
+function initializePage() {
+  blackListDisplay = document.getElementById("blackListDisplay");
+  updateBlackListDisplay();
+
+  let addButton = document.getElementById("addButton");
+  addButton.onclick = function() {
+    website = document.getElementById("website").value.toLowerCase();
+    if (website.trim() != '') {
+      blackList.push(website);
+      console.log(blackList);
+      updateBlackListDisplay();
+      saveToStorage(website);
+    }
+  }
+
+  let getButton = document.getElementById("getButton");
+  getButton.onclick = function() {
+    chrome.storage.sync.get('websites', function(data) {
+      console.log("data", data);
+      console.log("data['websites']", data['websites']);
+    })
+  }
+
+  let clearButton = document.getElementById("clearButton");
+  clearButton.onclick = function() {
+    blackList = [];
+    chrome.storage.sync.clear();
+  }
+}
+
+function saveToStorage(website) {
+  chrome.storage.sync.set({'websites': blackList}, function() {
+  });
 }
