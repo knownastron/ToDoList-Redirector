@@ -2,7 +2,11 @@
   "manifest_version": 2,
   "name": "Google Keep Redirector",
   "version": "0.01",
-  "permissions": ["tabs", "storage"],
+  "permissions": ["tabs",
+                  "storage",
+                  "webNavigation",
+                  "http://*/",
+                  "https://*/"],
   "content_scripts": [
     {
       "run_at": "document_start",

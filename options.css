@@ -1,0 +1,57 @@
+body {
+  /* background-color: #f9f9f9; */
+}
+
+.my-col {
+  /* border: 1px dashed blue; */
+  text-align: center;
+}
+
+.x-button {
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#title {
+  text-align: center;
+  background-color: red;
+}
+
+.blacklist-container {
+  margin-top: 50px;
+}
+
+
+
+.container {
+  width: 80%;
+  /* border: 2px solid blue; */
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+form {
+  margin-top: 20px;
+}
+#submit-button {
+}
+
+#title {
+  display: block;
+}
+
+#input-redirect-website {
+  width: calc(100% - 100px);
+}
+
+#input-block-website {
+  width: calc(100% - 100px);
+
+}

@@ -1,19 +1,60 @@
-<!DOCTYPE html>
-    <head>
-        <title>To-do list redirector</title>
-        <link rel="stylesheet" type="text/css" href="index.css"/>
-    </head>
-    <body>
-      <script type="text/javascript" src="options.js"> </script>
-      <div id="userForm">
-        <input id="website" class="inputForm" type="text" placeholder="website"> </input>
-        <br>
-        <input id="addButton" type="submit" value="ADD"></input>
-        <input id="getButton" type="submit" value="GET"></input>
-        <input id="clearButton" type="submit" value="CLEAR"></input>
-      </div>
-      <div id="blackListDisplay">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="options.css">
+
+    <title>To-do List redirector</title>
+  </head>
+  <body>
+
+    <h1 id="title">To-do List Redirector</h1>
+    <div class="container">
+      <form class="form-inline">
+          <input type="text" class="form-control" id="input-redirect-website" placeholder="Enter URL of your to-do list">
+          <button type="form" class="btn btn-light" id="redirect-submit">Submit</button>
+      </form>
+      <small id="current-redirect" class="form-text text-muted">Currently redirecting to: </small>
+
+      <form class="form-inline">
+          <input type="text" class="form-control" id="input-block-website" placeholder="Enter website to block">
+          <button type="form" class="btn btn-light" id="block-submit">Submit</button>
+      </form>
+      <small id="recommended" class="form-text text-muted">Recommended format: "reddit.com/r/worldnews"</small>
+    </div>
+
+    <div class="container blacklist-container">
+      <h4>Blocked websites</h4>
+    </div>
+    <div class="container my-container" id="black-list-display">
+      <div class="row">
+        <div class="col">
+          <h3>Blocked websites</h3>
+        </div>
       </div>
-    </body>
+      <div class="row" >
+        <div class="col-1 my-col align-items-center">
+          <button type="button" class="btn-xs btn-light x-button">&times</button>
+        </div>
+        <div class="col align-items-center">
+          <p>www.reddit.com</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="options.js"> </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+  </body>
 </html>
