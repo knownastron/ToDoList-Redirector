@@ -14,22 +14,20 @@ window.onload = function() {
   });
 }
 
+
+/**
+ * initializes the submit buttons and initial display of the page on load up
+ */
 function initializePage() {
-  console.log("initializing page function");
   blackListDisplay = document.getElementById("black-list-display");
   updateBlackListDisplay();
   updateCurrentRedirectMessage();
 
-
-
   // set up the handling of the submit blocked website button
   let blockButton = document.getElementById("block-submit");
   blockButton.onclick = function() {
-    console.log("BUTTON CLICKED");
     let website = document.getElementById("input-block-website").value.toLowerCase();
-    console.log(website);
     if (website.trim() != '') {
-      console.log(blackList);
       blackList.push(website);
       updateBlackListDisplay();
       saveBlacklistToStorage();
@@ -48,8 +46,10 @@ function initializePage() {
   }
 }
 
+/**
+ * Updates the blacklist on the webpage
+ */
 function updateBlackListDisplay() {
-  console.log("Updating display");
   blackListDisplay = document.getElementById('black-list-display');
   blackListDisplay.innerHTML = '';
   for (let i = 0; i < blackList.length; i++) {
@@ -86,20 +86,22 @@ function updateBlackListDisplay() {
   }
 }
 
+/**
+ * Gets the current redirect website from storage and displays it on the page
+ */
 function updateCurrentRedirectMessage() {
   chrome.storage.sync.get('redirect-website', function(data) {
     redirectWebsite = data['redirect-website'];
     let currentRedirectMessage = document.getElementById("current-redirect");
     currentRedirectMessage.innerHTML = "Currently redirecting to: " + redirectWebsite;
   });
-
-
 }
 
-// sets up event listener for remove button click
+/**
+ * initializes the remove button a webside on the black list
+ */
 function setUpRemoveButton(button) {
   button.onclick = function() {
-
     website = this.parentNode.parentNode.children[1].children[0].innerHTML;
     index = blackList.indexOf(website);
     blackList.splice(index, 1);
@@ -109,14 +111,19 @@ function setUpRemoveButton(button) {
   }
 }
 
-
-
+/**
+ * Saves the updated blacklist to Chrome's storage
+ */
 function saveBlacklistToStorage() {
   chrome.storage.sync.set({'blocked-websites': blackList}, function() {
   });
 }
 
+/**
+ * Saves the updated redirect website to Chrome's storage
+ */
 function saveRedirectToStorage(website) {
+  website = 'https://' + website;
   chrome.storage.sync.set({'redirect-website': website}, function() {
   });
 }
