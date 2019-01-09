@@ -22,7 +22,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
      * checks if the currentURL is in the blacklist, redirects to myURL if true
      */
     function urlCheck() {
-      currentURL = tab.url.toLowerCase();
+      currentURL = String(tab.url).toLowerCase();
       blackList.forEach(function(website) {
         if (currentURL.includes(website)) {
             console.log("TRUUUUUUU background");

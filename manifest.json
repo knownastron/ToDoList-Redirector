@@ -1,12 +1,10 @@
 {
   "manifest_version": 2,
   "name": "To-do List Redirector",
-  "version": "0.01",
-  "permissions": ["tabs",
-                  "storage",
-                  "webNavigation",
-                  "http://*/",
-                  "https://*/"],
+  "version": "0.0.1",
+  "permissions": ["activeTab",
+                  "storage"
+                ],
   "content_scripts": [
     {
       "run_at": "document_start",
